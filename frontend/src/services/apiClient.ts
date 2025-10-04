@@ -1,7 +1,14 @@
 import axios from 'axios';
 
+// Strictly read backend base URL from environment so secrets / deployed URL are not hardcoded.
+// Create a .env file with VITE_API_URL=... (never commit the real value if private).
+let baseURL = import.meta.env.VITE_API_URL as string | undefined;
 
-const baseURL = import.meta.env.VITE_API_URL || 'https://rag-chatbot-f5lu.onrender.com';
+if (!baseURL) {
+  // Provide a dev-friendly message while refusing to silently leak a production URL.
+  console.warn('[apiClient] VITE_API_URL not set. Falling back to http://localhost:8000 for local development.');
+  baseURL = 'http://localhost:8000';
+}
 export const api = axios.create({ baseURL });
 
 export interface Health {
