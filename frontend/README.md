@@ -78,4 +78,4 @@ npm run build
 - Configure reverse proxy so frontend `/api` maps to backend root if you adjust proxy logic
 
 ## License
-See repository root.
+Released under the [MIT License](../LICENSE). You may use, modify, and distribute this project with attribution. No warranty is provided.
