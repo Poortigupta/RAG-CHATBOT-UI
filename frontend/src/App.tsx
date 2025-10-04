@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Sidebar } from './components/layout/Sidebar';
+import { Logo } from './components/common/Logo';
 import { ChatWindow } from './components/chat/ChatWindow';
 import { DocumentUploader } from './components/upload/DocumentUploader';
 import { ThemeToggle } from './components/common/ThemeToggle';
@@ -17,6 +18,7 @@ export default function App() {
             onClick={() => setSidebarOpen(o => !o)}
             aria-label="Toggle sidebar"
           >☰</button>
+          <Logo />
           <h1 className="font-semibold tracking-tight text-lg">RAG Chatbot</h1>
           <div className="ml-auto flex items-center gap-3">
             <DocumentUploader inline />
